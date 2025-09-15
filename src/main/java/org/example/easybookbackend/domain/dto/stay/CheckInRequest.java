@@ -1,3 +1,10 @@
 package org.example.easybookbackend.domain.dto.stay;
 
-public record CheckInRequest(String roomNumber, String guestEmail, String guestFullName) {}
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+public record CheckInRequest(
+        @NotBlank String roomNumber,
+        @Email @NotBlank String guestEmail,
+        @NotBlank String guestFullName
+) {}

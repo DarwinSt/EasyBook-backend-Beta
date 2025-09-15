@@ -1,4 +1,5 @@
 package org.example.easybookbackend.domain.dto.room;
 
+import jakarta.validation.constraints.NotBlank;
 
-public record CreateRoomRequest(String number, String type) {}
+public record CreateRoomRequest(@NotBlank String number, @NotBlank String type) {}

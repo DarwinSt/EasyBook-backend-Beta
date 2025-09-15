@@ -1,3 +1,5 @@
 package org.example.easybookbackend.domain.dto.incidents;
 
-public record AssignIncidentRequest(String staffEmail) {}
+import jakarta.validation.constraints.NotBlank;
+
+public record AssignIncidentRequest(@NotBlank String staffEmail) {}

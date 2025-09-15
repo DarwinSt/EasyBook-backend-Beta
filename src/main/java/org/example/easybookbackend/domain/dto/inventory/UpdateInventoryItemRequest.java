@@ -1,3 +1,5 @@
 package org.example.easybookbackend.domain.dto.inventory;
 
-public record UpdateInventoryItemRequest(Integer quantity, String unit) {}
+import jakarta.validation.constraints.Min;
+
+public record UpdateInventoryItemRequest(@Min(0) Integer quantity, String unit) {}
