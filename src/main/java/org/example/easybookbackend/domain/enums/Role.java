@@ -1,4 +1,4 @@
 package org.example.easybookbackend.domain.enums;
-
-public class RoomState {
+public enum Role {
+    ADMIN, STAFF, GUEST
 }
