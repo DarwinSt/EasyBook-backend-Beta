@@ -2,6 +2,7 @@ package org.example.easybookbackend.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.easybookbackend.domain.entity.base.Auditable;
 import org.example.easybookbackend.domain.enums.Role;
 import org.hibernate.annotations.UuidGenerator;
 
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 @Entity @Table(name = "users")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class User {
+public class User extends Auditable {
 
     @Id
     @GeneratedValue

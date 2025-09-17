@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
-import java.time.OffsetDateTime;
+import java.time.Instant;
 import java.util.UUID;
 
 @Entity @Table(name = "stays")
@@ -23,9 +23,9 @@ public class Stay {
     private User guest;
 
     @Column(nullable = false)
-    private OffsetDateTime checkInAt;
+    private Instant checkInAt;
 
-    private OffsetDateTime checkOutAt;
+    private Instant checkOutAt;
 
     @Column(nullable = false)
     private boolean active;

@@ -18,6 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -58,7 +59,7 @@ public class StayService {
         var stay = Stay.builder()
                 .room(room)
                 .guest(guest)
-                .checkInAt(OffsetDateTime.now())
+                .checkInAt(Instant.now())
                 .active(true)
                 .build();
         stay = stayRepository.save(stay);
@@ -79,7 +80,7 @@ public class StayService {
                 .orElseThrow(() -> new BusinessException("No active stay for room"));
 
         stay.setActive(false);
-        stay.setCheckOutAt(OffsetDateTime.now());
+        stay.setCheckOutAt(Instant.now());
         stayRepository.save(stay);
 
         // Al hacer check-out: habitación a DIRTY y crear incidencia de limpieza
